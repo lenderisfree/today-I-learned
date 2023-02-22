@@ -66,7 +66,11 @@ async function loadFacts() {
       },
     }
   );
-  const data = await res.json()
+  const data = await res.json();
+  //console.log(data)
+ // const filteredData = data.filter ((fact) => fact.category === 'technology');
+
+
   createFactsList(data)
 }
 
@@ -87,12 +91,13 @@ function createFactsList(dataArray) {
     >(Source)</a
     >
   </p>
-   <span class="tag" style="background-color: #3b82f6"
-   >${fact.category}</span
+   <span class="tag" style="background-color: ${
+    CATEGORIES.find((cat) => cat.name === fact.category).color
+   }
+   ">${fact.category}</span
    >
   </li>`
   );
-  console.log(htmlArr);
   const html = htmlArr.join("");
   factsList.insertAdjacentHTML("afterbegin", html);
 }
@@ -110,6 +115,10 @@ btn.addEventListener(
     }
   })
 );
+
+console.log([6, 64, 6, -23, 11].filter((el) => el > 10));
+
+console.log([6, 64, 6, -23, 11].find((el) => el > 10));
 
 /* let votesInteresting = 23;
 let votesMindblowing = 5;

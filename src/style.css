@@ -294,6 +294,15 @@ ul {
   .disputed{
     font-size: small;
   }
+
+  .fact{
+    font-size: smaller;
+  }
+
+  .vote-buttons button{
+    width: 50px;
+   
+  }
   }
 
 
